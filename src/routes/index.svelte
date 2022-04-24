@@ -1,28 +1,19 @@
-<script context="module">
+<script context="module" lang="ts">
 	export const prerender = true;
 </script>
 
-<script lang="js">
-	let active = 0;
-	let fst = 0;
-	let snd = 0;
-	let trd = 0;
-	let fth = 0;
-	let ffth = 0;
-	let sth = 0;
-	let svth = 0;
-
-	function mActive() {
-		active = active - 10;
-	}
-
-	function pActive() {
-		active = active - 1;
-		active = active + 11;
-	}
+<script lang="ts">
+	let active :number = 0;
+	let fst :number = 0;
+	let snd :number = 0;
+	let trd :number = 0;
+	let fth :number = 0;
+	let ffth :number = 0;
+	let sth :number = 0;
+	let svth :number = 0;
 
 	if (active < 0) {
-		active = 0;
+		active = 0
 	}
 </script>
 
@@ -38,7 +29,7 @@
 				&nbsp;
 			</div>
 			<div class="card">
-				<button on:click={mActive}>
+				<button on:click={e => active = active - 10}>
 					-
 				</button>
 				&nbsp;&nbsp;
@@ -46,7 +37,7 @@
 					{active}
 				</span>
 				&nbsp;&nbsp;
-				<button on:click={pActive}>
+				<button on:click={e => active = active + 10}>
 					+
 				</button>
 			</div>
