@@ -40,6 +40,12 @@
 				<button on:click={e => active = active + 10}>
 					+
 				</button>
+
+				<br><br>
+
+				<button class="setzero" on:click={e=> active = 0}>
+					Set to '0'
+				</button>
 			</div>
 			<div class="control">
 				&nbsp;
@@ -114,6 +120,11 @@
 	.card button:hover{
 		opacity: 0.8;
 		cursor: pointer;
+	}
+
+	.card .setzero {
+		width: 80%;
+		border-radius: 10px;
 	}
 
 	.warning {
