@@ -15,6 +15,17 @@
 	let sth :number = 0;
 	let svth :number = 0;
 
+	// let dClass :any = '0'
+	// let dice :any;
+
+	let coin :any = -1;
+	let cCheck :number = 0
+
+	if (cCheck == 1) {
+		coin = Math.floor(Math.random() * 2) + 1;
+		cCheck = 0;
+	}
+
 	if (active < 0) {
 		active = 0
 	}
@@ -63,7 +74,27 @@
 				</button>
 			</div>
 			<div class="control">
-				&nbsp;
+				<!-- <button class="random" on:click={e => dClass = ''}>
+					{#if dClass == ''}
+						<span>
+							{dice = Math.random() * 6}
+						</span>
+					{:else}
+						<i class="fa-solid fa-dice"></i>
+					{/if}
+				</button> -->
+
+				<!-- <br><br><br> -->
+
+				<button class="random" on:click={e => coin = Math.floor(Math.random() * 2) + 1}>
+					{#if coin == 1}
+						H
+					{:else if coin == 2}
+						T
+					{:else}
+						C
+					{/if}
+				</button>
 			</div>
 		</div>
 
@@ -129,7 +160,7 @@
 
 				<br><br>
 
-				<button class="setzero" on:click={e=> active = 0}>
+				<button class="setzero" on:click={e=> trd = 0}>
 					Set to '0'
 				</button>
 			</div>
@@ -209,6 +240,27 @@
 
 	.activated {
 		opacity: 0.2;
+	}
+
+	.control .random {
+		width: 75px;
+		height: 75px;
+
+		background-color: coral;
+		color: whitesmoke;
+
+		text-align: center;
+		align-items: center;
+
+		font-size: 40px;
+
+		border: none;
+		border-radius: 50%;
+	}
+
+	.control .random:hover {
+		opacity: 0.8;
+		cursor: pointer;
 	}
 
 	.active-pokemon {
